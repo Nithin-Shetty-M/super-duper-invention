@@ -104,8 +104,8 @@ def index():
         password = request.form["password"]
         message = request.form["message"]
         output = process_code(password, message)
-        return render_template("result3.html", output=output)
-    return render_template("index6.html")
+        return render_template("result.html", output=output)
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
