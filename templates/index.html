@@ -1,192 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Secure Encryptor</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Secure Encryptor</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --border: #e5e7eb;
-      --text: #111827;
-      --muted: #6b7280;
-      --primary: #2563eb;
-      --primary-soft: rgba(37,99,235,0.15);
-    }
+<style>
+:root {
+  --bg: #f3f5f9;
+  --card: #ffffff;
+  --border: #e6e8ee;
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: rgba(37,99,235,.15);
+}
 
-    * { box-sizing: border-box; }
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #f8fafc, #eef2f7);
-      color: var(--text);
-      min-height: 100vh;
-    }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg,#f8fafc,#eef2f7);
+  color: var(--text);
+  min-height: 100vh;
+}
 
-    /* NAVBAR */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 36px;
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
-    }
+/* NAV */
+nav {
+  height: 64px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
 
-    nav .brand {
-      font-weight: 600;
-      font-size: 16px;
-      color: var(--primary);
-    }
+.brand {
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: .3px;
+}
 
-    nav span {
-      font-size: 13px;
-      color: var(--muted);
-    }
+nav span {
+  font-size: 13px;
+  color: var(--muted);
+}
 
-    /* LAYOUT */
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 80px 20px;
-    }
+/* CENTER */
+.container {
+  display: grid;
+  place-items: center;
+  padding: 90px 20px;
+}
 
-    .card {
-      width: 420px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 32px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      animation: fadeUp 0.6s ease forwards;
-    }
+.card {
+  width: 420px;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 34px;
+  border: 1px solid var(--border);
+  box-shadow: 0 25px 45px rgba(15,23,42,.08);
+  animation: fadeUp .6s ease;
+}
 
-    h2 {
-      margin-top: 0;
-      margin-bottom: 6px;
-      font-size: 20px;
-      font-weight: 600;
-    }
+h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
 
-    p.subtitle {
-      margin: 0 0 24px;
-      font-size: 13px;
-      color: var(--muted);
-    }
+.subtitle {
+  margin: 8px 0 28px;
+  font-size: 14px;
+  color: var(--muted);
+}
 
-    /* FORM */
-    label {
-      font-size: 12px;
-      color: var(--muted);
-    }
+/* FORM */
+label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
 
-    input, textarea {
-      width: 100%;
-      margin-top: 6px;
-      margin-bottom: 18px;
-      padding: 12px;
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-size: 14px;
-      outline: none;
-      transition: border 0.2s, box-shadow 0.2s;
-    }
+input, textarea {
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  padding: 13px 14px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  outline: none;
+  transition: .2s;
+}
 
-    input:focus, textarea:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 2px var(--primary-soft);
-    }
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
 
-    textarea {
-      resize: none;
-      height: 90px;
-    }
+textarea {
+  height: 100px;
+  resize: none;
+}
 
-    button {
-      width: 100%;
-      padding: 14px;
-      border-radius: 10px;
-      border: none;
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-      position: relative;
-    }
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg,#2563eb,#1d4ed8);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
 
-    button.loading .text { display: none; }
-    button.loading .loader { display: block; }
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(37,99,235,.35);
+}
 
-    .loader {
-      width: 22px;
-      height: 22px;
-      border: 3px solid rgba(255,255,255,0.3);
-      border-top: 3px solid #ffffff;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      display: none;
-      margin: auto;
-    }
+button.loading .text { display: none; }
+button.loading .loader { display: block; }
 
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: var(--muted);
-      padding-bottom: 30px;
-    }
+.loader {
+  width: 22px;
+  height: 22px;
+  border: 3px solid rgba(255,255,255,.35);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+  display: none;
+  margin: auto;
+}
 
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+/* FOOTER */
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  padding-bottom: 30px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
+
 <body>
 
-  <nav>
-    <div class="brand">Secure Encryptor</div>
-    <span>Password-based encryption</span>
-  </nav>
+<nav>
+  <div class="brand">Secure Encryptor</div>
+  <span>Password-based encryption</span>
+</nav>
 
-  <div class="container">
-    <div class="card">
-      <h2>Text Encryption</h2>
-      <p class="subtitle">Generate secure C code using password-based encryption</p>
+<div class="container">
+  <div class="card">
+    <h2>Encrypt Your Text</h2>
+    <p class="subtitle">Generate secure C encryption code using a password</p>
 
-      <form method="POST" onsubmit="startLoading()">
-        <label>Password</label>
-        <input type="text" name="password" placeholder="Enter password" required />
+    <form method="POST" onsubmit="startLoading()">
+      <label>Password</label>
+      <input type="text" name="password" placeholder="Enter encryption password" required>
 
-        <label>Message</label>
-        <textarea name="message" maxlength="100" placeholder="Enter message (max 100 chars)" required></textarea>
+      <label>Message</label>
+      <textarea name="message" maxlength="100" placeholder="Enter message (max 100 characters)" required></textarea>
 
-        <button type="submit" id="submitBtn">
-          <span class="text">Generate Code</span>
-          <div class="loader"></div>
-        </button>
-      </form>
-    </div>
+      <button id="submitBtn">
+        <span class="text">Generate Secure Code</span>
+        <div class="loader"></div>
+      </button>
+    </form>
   </div>
+</div>
 
-  <footer>
-    © 2025 Secure Encryptor
-  </footer>
+<footer>© 2025 Secure Encryptor</footer>
 
-  <script>
-    function startLoading() {
-      const btn = document.getElementById('submitBtn');
-      btn.classList.add('loading');
-      btn.disabled = true;
-    }
-  </script>
+<script>
+function startLoading() {
+  const btn = document.getElementById('submitBtn');
+  btn.classList.add('loading');
+  btn.disabled = true;
+}
+</script>
 
 </body>
 </html>

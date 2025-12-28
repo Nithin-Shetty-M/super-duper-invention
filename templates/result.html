@@ -1,167 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Secure Encryptor • Result</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Secure Encryptor • Result</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --border: #e5e7eb;
-      --text: #111827;
-      --muted: #6b7280;
-      --primary: #2563eb;
-    }
+<style>
+:root {
+  --bg:#f3f5f9;
+  --card:#ffffff;
+  --border:#e6e8ee;
+  --text:#0f172a;
+  --muted:#64748b;
+  --primary:#2563eb;
+}
 
-    * { box-sizing: border-box; }
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #f8fafc, #eef2f7);
-      color: var(--text);
-      min-height: 100vh;
-    }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg,#f8fafc,#eef2f7);
+  min-height: 100vh;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 36px;
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
-    }
+/* NAV */
+nav {
+  height: 64px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
 
-    nav .brand {
-      font-weight: 600;
-      color: var(--primary);
-    }
+.brand {
+  font-weight: 700;
+  color: var(--primary);
+}
 
-    nav span {
-      font-size: 13px;
-      color: var(--muted);
-    }
+nav span {
+  font-size: 13px;
+  color: var(--muted);
+}
 
-    .container {
-      display: flex;
-      justify-content: center;
-      padding: 60px 20px;
-    }
+/* CONTENT */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 70px 20px;
+}
 
-    .card {
-      width: 900px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      animation: fadeUp 0.6s ease forwards;
-    }
+.card {
+  width: 920px;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid var(--border);
+  box-shadow: 0 25px 45px rgba(15,23,42,.08);
+  animation: fadeUp .6s ease;
+}
 
-    h2 {
-      margin-top: 0;
-      margin-bottom: 6px;
-      font-size: 20px;
-    }
+h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
 
-    p.subtitle {
-      margin: 0 0 18px;
-      font-size: 13px;
-      color: var(--muted);
-    }
+.subtitle {
+  margin: 8px 0 20px;
+  font-size: 14px;
+  color: var(--muted);
+}
 
-    textarea {
-      width: 100%;
-      height: 380px;
-      background: #f9fafb;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px;
-      font-family: monospace;
-      font-size: 14px;
-      resize: none;
-      outline: none;
-    }
+/* CODE */
+textarea {
+  width: 100%;
+  height: 400px;
+  background: #0f172a;
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  border: none;
+  resize: none;
+}
 
-    .actions {
-      display: flex;
-      gap: 14px;
-      margin-top: 18px;
-    }
+/* ACTIONS */
+.actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+}
 
-    button, a.button {
-      padding: 12px 18px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      font-weight: 500;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
+button, a.button {
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
 
-    .primary {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      color: white;
-    }
+.primary {
+  background: linear-gradient(135deg,#2563eb,#1d4ed8);
+  color: white;
+}
 
-    .secondary {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
+.secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
 
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: var(--muted);
-      padding-bottom: 30px;
-    }
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  padding-bottom: 30px;
+}
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
+
 <body>
 
-  <nav>
-    <div class="brand">Secure Encryptor</div>
-    <span>Generated Output</span>
-  </nav>
+<nav>
+  <div class="brand">Secure Encryptor</div>
+  <span>Generated Output</span>
+</nav>
 
-  <div class="container">
-    <div class="card">
-      <h2>Generated C Code</h2>
-      <p class="subtitle">Review or copy the generated encryption code</p>
+<div class="container">
+  <div class="card">
+    <h2>Generated C Code</h2>
+    <p class="subtitle">Review, copy, or run the generated encryption code</p>
 
-      <textarea readonly>{{ output }}</textarea>
+    <textarea readonly>{{ output }}</textarea>
 
-      <div class="actions">
-        <button class="primary" onclick="copyCode()">Copy Code</button>
-        <a class="button secondary" href="https://www.onlinegdb.com/online_c_compiler" target="_blank">Run in Compiler</a>
-      </div>
+    <div class="actions">
+      <button class="primary" onclick="copyCode()">Copy Code</button>
+      <a class="button secondary" href="https://www.onlinegdb.com/online_c_compiler" target="_blank">Run in Compiler</a>
     </div>
   </div>
+</div>
 
-  <footer>
-    © 2025 Secure Encryptor
-  </footer>
+<footer>© 2025 Secure Encryptor</footer>
 
-  <script>
-    function copyCode() {
-      const textarea = document.querySelector('textarea');
-      textarea.select();
-      document.execCommand('copy');
-      alert('Code copied to clipboard');
-    }
-  </script>
+<script>
+function copyCode() {
+  const t = document.querySelector("textarea");
+  t.select();
+  document.execCommand("copy");
+  alert("Code copied successfully");
+}
+</script>
 
 </body>
 </html>
