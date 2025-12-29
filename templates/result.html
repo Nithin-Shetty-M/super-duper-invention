@@ -8,125 +8,131 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg:#f3f5f9;
+:root{
+  --bg:#f6f7fb;
   --card:#ffffff;
-  --border:#e6e8ee;
+  --border:#e5e7eb;
   --text:#0f172a;
   --muted:#64748b;
   --primary:#2563eb;
 }
 
-* { box-sizing: border-box; }
+*{box-sizing:border-box;}
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg,#f8fafc,#eef2f7);
-  min-height: 100vh;
+body{
+  margin:0;
+  font-family:Inter,sans-serif;
+  background:linear-gradient(180deg,#f8fafc,#eef2f7);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
 }
 
 /* NAV */
-nav {
-  height: 64px;
-  padding: 0 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-  border-bottom: 1px solid var(--border);
+nav{
+  height:64px;
+  padding:0 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#fff;
+  border-bottom:1px solid var(--border);
 }
 
-.brand {
-  font-weight: 700;
-  color: var(--primary);
+.brand{
+  font-weight:700;
+  color:var(--primary);
 }
 
-nav span {
-  font-size: 13px;
-  color: var(--muted);
+nav span{
+  font-size:13px;
+  color:var(--muted);
 }
 
-/* CONTENT */
-.container {
-  display: flex;
-  justify-content: center;
-  padding: 70px 20px;
+/* MAIN */
+main{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  padding:70px 20px;
 }
 
-.card {
-  width: 920px;
-  background: var(--card);
-  border-radius: 16px;
-  padding: 30px;
-  border: 1px solid var(--border);
-  box-shadow: 0 25px 45px rgba(15,23,42,.08);
-  animation: fadeUp .6s ease;
+.card{
+  width:100%;
+  max-width:960px;
+  background:var(--card);
+  border-radius:16px;
+  padding:32px;
+  border:1px solid var(--border);
+  box-shadow:0 30px 50px rgba(15,23,42,.08);
+  animation:fadeUp .6s ease;
 }
 
-h2 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 700;
+h1{
+  margin:0;
+  font-size:22px;
+  font-weight:700;
 }
 
-.subtitle {
-  margin: 8px 0 20px;
-  font-size: 14px;
-  color: var(--muted);
+.subtitle{
+  margin:8px 0 20px;
+  font-size:14px;
+  color:var(--muted);
 }
 
 /* CODE */
-textarea {
-  width: 100%;
-  height: 400px;
-  background: #0f172a;
-  color: #e5e7eb;
-  border-radius: 12px;
-  padding: 18px;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 14px;
-  border: none;
-  resize: none;
+textarea{
+  width:100%;
+  height:400px;
+  background:#0f172a;
+  color:#e5e7eb;
+  border-radius:12px;
+  padding:18px;
+  font-family:"JetBrains Mono",monospace;
+  font-size:14px;
+  border:none;
+  resize:none;
 }
 
 /* ACTIONS */
-.actions {
-  display: flex;
-  gap: 14px;
-  margin-top: 20px;
+.actions{
+  display:flex;
+  gap:14px;
+  margin-top:22px;
+  flex-wrap:wrap;
 }
 
-button, a.button {
-  padding: 12px 18px;
-  border-radius: 12px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
+button,a.button{
+  padding:12px 18px;
+  border-radius:12px;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
 }
 
-.primary {
-  background: linear-gradient(135deg,#2563eb,#1d4ed8);
-  color: white;
+.primary{
+  background:linear-gradient(135deg,#2563eb,#1d4ed8);
+  color:#fff;
 }
 
-.secondary {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text);
+.secondary{
+  background:#fff;
+  border:1px solid var(--border);
+  color:var(--text);
 }
 
-footer {
-  text-align: center;
-  font-size: 12px;
-  color: var(--muted);
-  padding-bottom: 30px;
+/* FOOTER */
+footer{
+  text-align:center;
+  font-size:12px;
+  color:var(--muted);
+  padding:24px 0;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px);}
+  to{opacity:1;transform:translateY(0);}
 }
 </style>
 </head>
@@ -138,25 +144,27 @@ footer {
   <span>Generated Output</span>
 </nav>
 
-<div class="container">
+<main>
   <div class="card">
-    <h2>Generated C Code</h2>
+    <h1>Generated C Code</h1>
     <p class="subtitle">Review, copy, or run the generated encryption code</p>
 
     <textarea readonly>{{ output }}</textarea>
 
     <div class="actions">
       <button class="primary" onclick="copyCode()">Copy Code</button>
-      <a class="button secondary" href="https://www.onlinegdb.com/online_c_compiler" target="_blank">Run in Compiler</a>
+      <a class="button secondary"
+         href="https://www.onlinegdb.com/online_c_compiler"
+         target="_blank">Run in Compiler</a>
     </div>
   </div>
-</div>
+</main>
 
 <footer>© 2025 Secure Encryptor</footer>
 
 <script>
-function copyCode() {
-  const t = document.querySelector("textarea");
+function copyCode(){
+  const t=document.querySelector("textarea");
   t.select();
   document.execCommand("copy");
   alert("Code copied successfully");
