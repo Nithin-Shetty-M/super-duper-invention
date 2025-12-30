@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import requests
+import random
 
 app = Flask(__name__)
 
@@ -16,7 +17,8 @@ def process_code(password, text):
     n_list = alpha_to_num(password)
     s_list = alpha_to_num(text)
     flag=0
-    km=1407
+    ks=random.randint(1000,9999)
+    km=ks
     for i in range(0,len(n_list)):
         if(flag==0):
             km=km+n_list[i]
@@ -45,7 +47,7 @@ def process_code(password, text):
     code.append("//output generated")
     code.append('#include<stdio.h>\n#include<conio.h>\n#include<string.h>\nint main(void)\n{')
     code.append("char str[100];")
-    code.append("int flag=0,sum=1407;")
+    code.append(f"int flag=0,sum={ks};")
     code.append("int a[100];")
     code.append("int i, len;")
     '''code.append("clrscr();")'''
