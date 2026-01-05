@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 import requests
-import random
 import os
 
 app = Flask(__name__)
@@ -17,16 +16,6 @@ def alpha_to_num(s):
 def process_code(password, text):
     n_list = alpha_to_num(password)
     s_list = alpha_to_num(text)
-    flag=0
-    ks=random.randint(1000,9999)
-    km=ks
-    for i in range(0,len(n_list)):
-        if(flag==0):
-            km=km+n_list[i]
-            flag=1
-        else:
-            km=km-n_list[i]
-            flag=0
     nx = 0
     sx = 0
     ns = []
@@ -48,7 +37,7 @@ def process_code(password, text):
     code.append("//output generated")
     code.append('#include<stdio.h>\n#include<conio.h>\n#include<string.h>\nint main(void)\n{')
     code.append("char str[100];")
-    code.append(f"int flag=0,sum={ks};")
+    code.append(f"int flag=0;")
     code.append("int a[100];")
     code.append("int i, len;")
     '''code.append("clrscr();")'''
@@ -57,18 +46,7 @@ def process_code(password, text):
     code.append("len = strlen(str);")
     code.append("for (i = 0; i < len; i++)\n{")
     code.append("a[i] = (int)str[i];")
-    code.append("if(flag==0)")
-    code.append("{")
-    code.append("sum=sum+a[i];")
-    code.append("flag=1;")
     code.append("}")
-    code.append("else")
-    code.append("{")
-    code.append("sum=sum-a[i];")
-    code.append("flag=0;")
-    code.append("}")
-    code.append("}")
-    code.append(f"if(sum=={km})")
     f_code="\n".join(code)
     code = []
 
@@ -93,8 +71,6 @@ def process_code(password, text):
         nx = nx + 1
         sx = sx + 1
     code.append(code_line + ");\n")
-    code.append("else\n")
-    code.append('printf("Wrong password");\n')
     code.append("getch();\n")
     code.append("return 0;\n}")
 
