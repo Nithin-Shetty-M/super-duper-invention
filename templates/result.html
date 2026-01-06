@@ -6,6 +6,7 @@
 <title>Secure Encryptor • Result</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 <style>
 :root{
@@ -198,13 +199,28 @@ footer{
 </main>
 
 <footer>© 2025 Secure Encryptor</footer>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 
 <script>
 function copyCode(){
   const t=document.querySelector("textarea");
   t.select();
   document.execCommand("copy");
-  alert("Code copied successfully");
+  showToast("Code copied successfully");
+}
+function showToast(msg) {
+  Toastify({
+    text: msg,
+    duration: 3000,
+    gravity: "top",     // top or bottom
+    position: "center",  // left, center or right
+    close: true,
+    stopOnFocus: true,
+    style: {
+      background: "linear-gradient(to right, #4facfe, #00f2fe)",
+    }
+  }).showToast();
 }
 </script>
 
